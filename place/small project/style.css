@@ -1,0 +1,67 @@
+/*now we are first using elemnt selector*/
+
+h3{
+    color: darkgoldenrod;
+}
+h4{
+    color: blue;
+}
+/*slector are tose by which we can select the elemnts of the html
+if we want many elemnts to give same color or font then we can use comma */
+a{
+    color: black;
+}
+/*it is only for to use dots or not to poing or not*/
+li{
+    list-style: none;
+}
+/*now we are styling nesting of the atgs*/
+li,h3 em{
+    color: rebeccapurple;
+}
+/*now we are using adjacent selector by which we select the next tag*/
+h1+h2{
+    font-weight: 200%;
+}
+/*pseudo class selector*/
+a:hover{
+    color: turquoise;
+    text-decoration: none;
+}
+body h2+h3 em{
+    background-color: black;
+}
+li[class]{
+    color:crimson;
+    font-size:300%;
+}
+
+/* important properties in css*/
+/*backgroundcolor,bordercolor,color*/
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

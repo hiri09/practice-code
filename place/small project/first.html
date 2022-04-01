@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css learning</title>
+    <!--<link rel="stylesheet" href="add.css">-->
+
+</head>
+<body>
+    <script>
+        function additem(){
+            let item=document.getElementById("box");
+            let item_list=document.getElementById("list-item");
+            if(item.value!=""){
+               let make=document.createElement("li");
+               make.appendChild(document.createTextNode(item.value));
+               item_list.appendChild(make);
+               item.value=" ";
+
+               make.onclick=function(){
+                   this.parentNode.removeChild(this);
+               }
+            }
+            else{
+
+                alert("hey write your message");
+            }
+        }
+    </script>
+    <div>
+        <h1>TO DO LIST</h1>
+        <Br></Br>
+        <div class="row">
+            <form action="">
+                <div class="input-group">
+                    <input type="text" placeholder="write all your task here" id="box" style="width: 30vw;">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="button" value="Enter"  style="width: 10vw;" onclick="additem()">
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <ul id="list-item">
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

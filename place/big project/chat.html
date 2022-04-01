@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web chat</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body class="raman">
+    <script>
+            function show1(){
+                let p=document.getElementById("msg");
+                let list_item=document.getElementById("list_item");
+                console.log(p.value.length);
+                if(p.value != "" && p.value!=" "){
+                    let user1=document.createElement("li");
+                    user1.style.color='red';
+                    user1.style.fontWeight='bolder';
+                    user1.appendChild(document.createTextNode("user1"));
+                    list_item2.appendChild(user1);
+
+                    let make_li=document.createElement("li");
+                    make_li.style.color='white';
+                    make_li.style.fontWeight='bolder';
+                    let text=`<p>${p.value}</p>`;
+                    make_li.innerHTML=text;
+                    list_item.appendChild(make_li);
+                    
+
+                    let make2_li=document.createElement("li");
+                    make2_li.style.color='white';
+                    make2_li.style.fontWeight='bolder';
+                    make2_li.appendChild(document.createTextNode(p.value));
+                    list_item2.appendChild(make2_li);
+                    
+
+                    make_li.style.textAlign='right';
+                    make_li.style.position='relative';
+                    make_li.style.right='20px';
+                    p.value=" ";
+                    
+                    
+                    make_li.onclick=function(){
+                        let p=confirm("want to update (ok)  or delte(close)");
+                        if(p){
+                            /*this.parentNode.removeChild(this);*/
+                            let q=prompt("updated message");
+                            if(q.value!=""){
+                                this.innerHTML=`<span>${q}</span>`;
+                             make2_li.innerHTML=`<span>${q}</span>`;
+                             console.log(this.innerHTML);
+                            }
+                        }
+                        else{
+                            this.parentNode.removeChild(this);
+                            make2_li.innerHTML="message deleted";
+
+                        }
+                        
+                    }
+                    
+                }
+                else{
+                    alert("please write message ")
+                }
+            }
+            function show2(){
+                let p=document.getElementById("msg2");
+                let list_item=document.getElementById("list_item");
+                if(p.value != ""){
+                    let user1=document.createElement("li");
+                    user1.style.color='blue';
+                    user1.style.fontWeight='bolder';
+                    user1.appendChild(document.createTextNode("user2"));
+                    list_item.appendChild(user1);
+                    let make_li=document.createElement("li");
+                    make_li.style.color='white';
+                    make_li.style.fontWeight='bolder';
+                    make_li.appendChild(document.createTextNode(p.value));
+                    list_item.appendChild(make_li);
+
+                    
+
+                    let make2_li=document.createElement("li");
+                    make2_li.style.color='white';
+                    make2_li.style.fontWeight='bolder';
+                    make2_li.appendChild(document.createTextNode(p.value));
+                    list_item2.appendChild(make2_li);
+                    make2_li.style.textAlign='right';
+                    make2_li.style.position='relative';
+                    make2_li.style.right='20px';
+                    p.value="";
+
+                    make2_li.onclick=function(){
+                        let p=confirm("want to update (ok)  or delte(close)");
+                        if(p){
+                            /*this.parentNode.removeChild(this);*/
+                            let q=prompt("updated message");
+                            if(q.value!=""){
+                                this.innerHTML=`<span>${q}</span>`;
+                             make2_li.innerHTML=`<span>${q}</span>`;
+                             console.log(this.innerHTML);
+                            }
+                        }
+                        else{
+                            this.parentNode.removeChild(this);
+                            make_li.innerHTML="message deleted";
+
+                        }
+                    }
+                }
+                else{
+                    alert("please write message ")
+                }
+            }
+            function alrt(){
+                alert("to delete your message click on that message");
+            }
+            
+    </script>
+
+    <div class="ppp">
+        <img src="http://images6.fanpop.com/image/photos/34300000/Big-Cats-wild-animals-34365447-1024-768.jpg" id="img11" width="1500px">
+        
+        <div class="heading">
+            <h1>WEB CHAT</h1>
+        </div>
+    
+        <div class="slide1">
+        
+            <div class="content-1">
+                <img src="https://media.istockphoto.com/photos/chat-concept-colorful-chat-bubbles-over-red-background-picture-id923018908?k=6&m=923018908&s=170667a&w=0&h=m7XQmhV611_q1xpHPRflx54juDaRJ_nptR6UYwCJLo0=" alt="">
+                <div class="user1"><h3 class="h">USER 1</h3></div>
+                 <ul id="list_item" type="none">
+    
+                 </ul>
+            </div>
+            <div class="search1">
+                <input type="text" id="msg" placeholder="enter your message">
+                <input type="button" value="send" onclick="show1()">
+                <input type="button" value="delete" onclick="alrt()" >
+            </div>
+        </div>
+        <div class="slide2">
+            
+            <div class="content-2">
+                <img src="https://media.istockphoto.com/photos/chat-concept-colorful-chat-bubbles-over-red-background-picture-id923018908?k=6&m=923018908&s=170667a&w=0&h=m7XQmhV611_q1xpHPRflx54juDaRJ_nptR6UYwCJLo0=" alt="">
+                <div class="user2"><h3 class="hh">USER 2</h3></div>
+               <ul id="list_item2" type="none">
+    
+               </ul>
+            </div>
+            <div class="search2">
+                <input type="text" id="msg2" placeholder="enter your message">
+                <input type="button" value="send" onclick="show2()">
+                <input type="button" value="delete" onclick="alrt()" >
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget app</title>
+    <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+    <script>
+          function fun(){
+              let a=document.getElementById("total-budget");
+              if(a.value==""){
+                  alert("type something");
+              }
+              if(isNaN(a.value)==false){
+                document.getElementById("ans").innerHTML=a.value;
+                document.getElementById("ans3").innerHTML=a.value;
+              }
+              else{
+                  alert("it is not a number");
+              }
+            
+          }
+          function fun2(){
+              let b=document.getElementById("amount-deducted");
+              let a=document.getElementById("total-budget");
+              let d=document.getElementById("show");
+              let bb=document.getElementById("ans2");
+              let cc=document.getElementById("ans3");
+              let aa=document.getElementById("ans");
+              let list_item=document.getElementById("uu");
+              let list_item2=document.getElementById("llu");
+              bb.innerHTML=parseInt(bb.innerText)+parseInt(b.value);
+              cc.innerHTML=a.value-b.value;
+              a.value=a.value-b.value;
+              let q=(50/100)*aa.innerText;
+              if(parseInt(cc.innerText)<q){
+                  bb.style.color="red";
+                  cc.style.color="red";
+              }
+              if(isNaN(b.value)==true || d.value=="" || b.value==""){
+                  alert("write somethind bro");
+              }
+              else{
+                  let make_li=document.createElement("li");
+                  make_li.appendChild(document.createTextNode(d.value));
+                  list_item.appendChild(make_li);
+
+                  let make_li2=document.createElement("li");
+                  make_li2.appendChild(document.createTextNode(b.value));
+                  list_item2.appendChild(make_li2);
+              }
+              console.log(q);
+              console.log(typeof(q));
+              b.value="";
+              d.value="";
+          }
+         
+    </script>
+    <div class="budget-app">
+        <h1 class="name"> &#8377 BUDGET APP</h1>
+        <div class="budget">
+             <div><h4>Please Enter Your Budget </h4></div>
+             <label>
+                <input type="text" id="total-budget">
+             </label>
+             <br>
+             <label>
+                <input type="button" value="calculate" onclick="fun()">
+             </label>
+        </div>
+        <div class="pay">
+            <div><h4>Please Enter Your Expense</h4></div>
+            <label >
+                <input type="text" id="show">
+            </label>
+            <br>
+            <div><h4>Please Enter Your Expense Amount</h4></div>
+            <label>
+                <input type="text" id="amount-deducted">
+            </label>
+            <br>
+            <label>
+                <input type="button" value="Add Expense" onclick="fun2()">
+            </label>
+       </div>
+    </div>
+   <!--<img src="https://tse1.mm.bing.net/th?id=OIP.Nb2KXCaEh12J7y5gDsupLAHaHa&pid=Api&P=0&w=156&h=156" height="150px" width="150px" id="b1" alt="no">-->
+   <!--<img src="https://cdn2.iconfinder.com/data/icons/business-blue-series-set-9/128/1-04-512.png" height="150px" width="150px" id="b2" alt="no">-->
+   <!--<img src="https://tse2.mm.bing.net/th?id=OIP.A2LKD1SoOQI4Y1OsNTlZ4QHaHa&pid=Api&P=0&w=168&h=168" height="150px" width="150px" id="b3" alt="no">-->
+ <div class="mid">
+  
+    <div class="p1">
+        <h2>Budget</h2>
+        <img style="border-radius: 70px;" src="https://tse1.mm.bing.net/th?id=OIP.Nb2KXCaEh12J7y5gDsupLAHaHa&pid=Api&P=0&w=156&h=156" height="100px" width="100px" id="b1" alt="no">
+        <h2>&#8377</h2>
+        <h3 id="ans">0</h3>
+    </div>
+    <div class="p2">
+        <h2>Expenses</h2>
+        <img src="https://cdn2.iconfinder.com/data/icons/business-blue-series-set-9/128/1-04-512.png" height="100px" width="100px" id="b2" alt="no">
+        <h2>&#8377</h2>
+        <h3 id="ans2">0</h3>
+    </div>
+    <div class="p3">
+        <h2>Balance</h2>
+        <img style="border-radius: 70px;" src="https://tse2.mm.bing.net/th?id=OIP.A2LKD1SoOQI4Y1OsNTlZ4QHaHa&pid=Api&P=0&w=168&h=168" height="100px" width="100px" id="b3" alt="no">          
+        <h2>&#8377</h2>
+        <h3 id="ans3">0</h3>
+    </div>
+  
+    <div class="Expenses-Title" ><h2 style="text-align: center;">EXPENSE TITLE</h2>
+        <ul id="uu" type="none">
+             
+        </ul>
+    </div>
+    <div class="Expenses-value"><h2 style="text-align: center;">EXPENSE PRICE</h2>
+        <ul id="llu" type="none">
+             
+        </ul>
+    </div>
+    
+</div>
+
+   <div class="history">
+       
+       <div class="photo">
+           <img src="https://tse4.mm.bing.net/th?id=OIP.6fTCkql1sx5oNnB_GW7JEAHaE8&pid=Api&P=0&w=262&h=174" width="100px" height="100px" alt="no">
+           <br>
+           <h2>Cristiano Ronaldo</h2>
+           <h4>cr7@gmai.com</h4>
+       </div>
+       <div class="hist" id="ory">
+
+       </div>
+   </div>
+   
+</body>
+</html>

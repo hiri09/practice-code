@@ -1,0 +1,74 @@
+
+.login{
+    color: black;
+    flex-direction: column;
+    text-align: center;
+    font-style: unset;
+    position: absolute;
+    top: 5%;
+    left: 40%;
+}
+#bkl{
+   background-image:url(https://static.vecteezy.com/system/resources/previews/000/399/517/original/vector-colorful-holographic-gradient-background-design.jpg);
+   height: 1000px;
+   fill-opacity: 0.3px;
+}
+.tablee{
+    width: 320px;
+    height: 420px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    top: 40%;
+    left: 42%;
+    position: absolute;
+    border-radius: 20px;
+    border-color:white ;
+    border-width: 20px;
+    padding: 30px;
+}
+#avtaar{
+    width: 30%;
+    border-radius: 50%;
+    position: absolute;
+    top: -18%;
+    left: 30%;
+    background-color: red;
+    border-width: 20px;
+}
+input[type=text]{
+    width: 200px;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 13px;
+}
+input[type=password]{
+    width: 200px;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: #fff;
+    font-size: 16px;
+}
+input[type=submit]{
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: red;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #fff;
+    
+}
+
+
+
+
+
+
+
+

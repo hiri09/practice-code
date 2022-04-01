@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditional statements</title>
+</head>
+<body>
+    <h1>conditional statetments </h1>
+    <p id="demo"></p>
+    <p id="raman"></p>
+    <form onsubmit="confirmed()">
+        enter your father name : <input type="text" id="fname" >
+        <input type="submit">
+    </form>
+    <script>
+        /*console.log("this is console");
+        document.write("what are you doing");
+        window.alert("namaste india");
+        document.getElementById("demo").innerHTML = "i am done with others";
+        prompt("write your name");
+        */
+
+       /*var x=5;
+       var y=3;
+       var z=4;
+       var p=6;
+       document.write(x+y);
+       document.getElementById("demo").innerHTML = z/p;
+       document.getElementById("raman").innerHTML= x + "<br>" + y + "<br>" + z;
+       var name;
+       name="heera";
+       document.write("<br>"+name);
+       name="ramu";
+       document.write("<br>"+name);
+       */
+       /*var age=prompt("what is your age");
+       if(age<18){
+           document.write("you are not eleigible");
+       }
+       else{
+           document.write("what happened"); 
+       }
+       */
+      /*
+      var a=prompt("what is your age");
+
+      document.write(a);
+      
+      var b=prompt("what is second age");
+      
+      document.write(b);*/
+      /*switch(new Date().getDay()){
+          case 0:
+              document.write("sunday");
+              break;
+          case 1:
+              document.write("monday");
+              break;
+          case 2:
+              document.write("tuesday");
+              break;
+          case 3:
+              document.write("wednesday");
+              break;
+          case 4:
+              document.write("thursday" +"<br>");
+              break;
+          case 5:
+              document.write("friday");
+              break;
+          case 6:
+              document.write("saturday");
+              break;
+          default:
+              document.write("nothing happende");
+      }
+      "<br>"
+      var text="";
+      var array=["ram","sham","ghansham"];
+      */
+      /*for(let i=0;i<array.length;i++){
+           text+=array[i] + "<br>";
+      }
+      */
+      /*
+      for(let x in array){
+          text+=array[x] + "<br>";
+      }
+      document.write(text);
+      */
+/*       function add(a,b){
+           return a+b;
+       }
+       document.getElementById("demo").innerHTML=add(2,6);
+       */
+       /*function myfun(){
+           document.getElementById("demo").innerHTML=Date();
+       } */
+       /*function nam(){
+           let x=document.getElementById("see");
+           x.value=x.value.toUppeCrase();
+       }*/
+       function confirmed(){
+           fname = document.forms[0].fname.value;
+           window.alert("you are selected"  + fname);
+       }
+    </script>
+    <!--<button onclick="myfun()">try it</button>-->
+    <!--raman ka dusra naam<input type="text" id="see" onblur="nam()">-->
+     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

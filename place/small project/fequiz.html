@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE quiz</title>
+    <link rel="stylesheet" href="fe.css">
+</head>
+<body>
+    <h1>Frontend Quiz</h1>
+    <script src="quiz.js"></script>
+    <form id="quiz" name="quiz">
+        <div>HTML stands for HyperText_________ language</div>  
+        <input type="text" id="textbox" name="question1">
+
+        <p>HTML element is the root element of an HTML document</p>
+        <input type="radio" name="question2" id="mc" value="true">true <br>
+        <input type="radio" name="question2" id="mc" value="false">false <br>
+
+        <p>which tag is used to describe the html images ?</p>
+        <input type="radio" name="question3" id="mc" value="img">img <br>
+        <input type="radio" name="question3" id="mc" value="src">src <br>
+        <input type="radio" name="question3" id="mc" value="href">href <br>
+        <input type="radio" name="question3" id="mc" value="alt">alt <br><br>
+        <input type="button" value="submit" id="button" onclick="check();">
+    </form>
+    <div id="after_submit"></div>
+    <p id="messages"></p>
+    <p id="number_correct"></p>
+</body>
+</html>

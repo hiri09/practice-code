@@ -1,0 +1,154 @@
+.budget-app{
+    background-color:pink;
+    height: 700px;
+    width: 350px;
+    box-shadow: -40px 40px 40px rgba(0,0,0,0.25);
+    float: left;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.budget-app h1{
+    color:black;
+}
+.name{
+   font-family:Arial, Helvetica, sans-serif;
+   font-weight:bolder;
+   position: relative;
+   left: 10px;
+   top: 50px;
+}
+.budget{
+    height: 250px;
+    width: 300px;
+    position: relative;
+    top: 40px;
+    left: 3px;
+    border-radius: 8px;
+}
+.budget h4{
+    position: relative;
+    top: 20px;
+    
+    left: 40px;
+}
+
+.budget input[type="text"]{
+    position: relative;
+    border-radius: 5px;
+    top: 20px;
+    left: 40px;
+}
+.budget input[type="button"]{
+    position: relative;
+    border-radius: 5px;
+    top: 40px;
+    left: 40px;
+}
+.pay{
+    
+    height: 250px;
+    width: 300px;
+    position: relative;
+    top: 0px;
+    left: 3px;
+    border-radius: 8px;
+}
+.pay h4{
+    position: relative;
+    top: 20px;
+    left: 40px;
+}
+.pay input[type="text"]{
+    position: relative;
+    top: 20px;
+    border-radius: 5px;
+    left: 40px;
+}
+.pay input[type="button"]{
+    position: relative;
+    top: 40px;
+    left: 40px;
+    border-radius: 5px;
+}
+.mid{
+    
+    width: 771px;
+    height: 700px;
+    background-color:cornsilk;
+    float: left;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.history{
+    
+   float: left;
+   height: 700px;
+    width: 330px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+
+    background-color:pink;
+}
+.photo{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 20px;
+    border-radius: 8px;
+    left: 80px;
+    text-align: center;
+    background-color: blanchedalmond;
+}
+.photo img{
+    border-radius: 70px;
+}
+.p1 {
+    float: left;
+    width: 33.33%;
+    overflow-wrap: break-word;
+    height: 300px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.p2 {
+    float: left;
+    width: 33.33%;
+    overflow-wrap: break-word;
+    height: 300px;
+    text-align: center;
+}
+.p3 {
+    float: left;
+    width: 33.33%;
+    padding: 0px;
+    overflow-wrap: break-word;
+    height: 300px;
+    text-align: center;
+}
+
+.Expenses-Title{
+    float: left;
+    width: 400px;
+    height: 380px;
+    background-color:cornflowerblue;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.Expenses-value{
+    float: right;
+    width: 300px;
+    height: 380px;
+    background-color: aqua;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.product-small-img img{
+    height: 92px;
+    margin: 10px;
+    cursor: pointer;
+    display: block;
+    opacity: 0.6;
+}
+.product-small-img{
+    float: left;
+}
+.product{
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+    padding: 10%;
+
+}
+.product-small-img img:hover{
+    opacity: 1;;
+}
+.pp img{
+    height: 400px; 
+    position: absolute;
+    top: 25%;
+    left: 70%;
+
+}
+

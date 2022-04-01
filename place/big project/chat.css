@@ -1,0 +1,115 @@
+.heading h1{
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: darkblue;
+    color: white;
+    border-radius: 5px;
+    border: 6px solid white;
+    position: relative;
+    top: -1130px;
+    left: 5px;
+}
+.content-1{
+    width: 500px;
+    height: 600px;
+    box-shadow: -10px 10px 40px rgba(0,0,0,0.25);
+    position: relative;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    border-radius: 6px;
+    top: -1120px;
+    scroll-behavior:smooth;
+    left: 20px;
+    background-image: url(https://tse4.mm.bing.net/th?id=OIP.wcYEwbHHV9p3FhhjsqGuUgHaGl&pid=Api&P=0&w=196&h=174);
+    border: 10px solid wheat;
+}
+.search1 input[type=text]{
+    position: relative;
+    top: -1110px;
+    left: 30px;
+    width: 300px;
+    height: 20px;
+    border-radius: 5px;
+}
+.search1 img{
+    position: relative;
+    width: 20px;
+    top:-20px;
+    left: 80px;
+    border-radius: 50%;
+}
+.user1{
+    position: relative;
+    left: 190px;
+    top: -300px;
+    color:aliceblue;
+    font-weight: bold;
+
+}
+.search1 input[type=button]{
+    position: relative;
+    top: -1110px;
+    left: 40px;
+    border-radius: 5px;
+}
+.slide1{
+    float: left;
+}
+.content-2{
+    width: 500px;
+    height: 600px;
+    box-shadow: -10px 10px 40px rgba(0,0,0,0.25);
+    position: relative;
+    overflow-y: scroll;
+    scroll-behavior:auto;
+    overflow-x: hidden;
+    top: -1120px;
+    border-radius: 6px;
+    background-image: url(https://tse4.mm.bing.net/th?id=OIP.wcYEwbHHV9p3FhhjsqGuUgHaGl&pid=Api&P=0&w=196&h=174);
+    left: -100px;
+    border: 10px solid wheat;
+
+}
+.search2 input[type=text]{
+    position: relative;
+    top: -1110px;
+    left: -90px;
+    width: 300px;
+    height: 20px;
+    border-radius: 5px;
+}
+.user2{
+    position: relative;
+    left: 190px;
+    top: -300px;
+    font-weight: bold;
+    color:aliceblue;
+}
+.search2 input[type=button]{
+    position: relative;
+    top: -1110px;
+    left: -80px;
+    border-radius: 5px;
+}
+.slide2{
+    float: right;
+}
+#img11{
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
