@@ -26,30 +26,39 @@ int problemoftheday(int n){
     return a;
 
 }
-string solve(vector<int>&v,int n){
-   set<int>st;
-   for(auto it:v){
-    st.insert(it);
-   }
-   
-
-
+int lis(vector<int>&v,int idx,int pre_idx,vector<vector<int>> &dp){
+    if(idx==v.size()){
+        return 0;
+    }
+    if(dp[idx][pre_idx+1]!=-1){
+        return dp[idx][pre_idx+1];
+    }
+    int notatke=0+lis(v,idx+1,pre_idx,dp);
+    int take=-1e9;
+    if(pre_idx==-1 || v[idx]>v[pre_idx]){
+        take=1+lis(v,idx+1,idx,dp);
+    }
+    return dp[idx][pre_idx+1]=max(take,notatke);
 }
 int main(){
-
-    int n,m;
-    cin>>n>>m;
+   /* int n;
+    cin>>n;
     vector<int>v(n);
-    vector<int>p(m);
     for(int i=0;i<n;i++){
         cin>>v[i];
     }
-    for(int i=0;i<m;i++){
-        cin>>p[i];
+    vector<vector<int>>dp(n+1,vector<int>(n+1,0));
+    //cout<<lis(v,0,-1,dp);
+    for(int i=n-1;i>=0;i--){
+        for(int j=i-1;j>=-1;j--){
+            int notatke=0+dp[i+1][j+1];
+            int take=-1e9;
+            if(j==-1 || v[i]>v[j]){
+                  take=1+dp[i+1][i+1];
+            }
+            dp[i][j+1]=max(take,notatke);
+        }
     }
-    int k;
-    cin>>k;
-    
+    cout<<dp[0][-1+1]<<endl;*/
     return 0;
-
 }
