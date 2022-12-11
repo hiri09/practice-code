@@ -1,5 +1,169 @@
 #include<bits/stdc++.h>
 using namespace std;
+class disjoint_set{
+    public:
+    vector<int>rank,parent,size;
+    disjoint_set(int n){
+        rank.resize(n+1,0);
+        parent.resize(n+1);
+        size.resize(n+1);
+        for(int i=0;i<=n;i++){
+            parent[i]=i;
+            size[i]=1;
+        }
+    }
+    int find_parent(int node){
+        if(node==parent[node]){
+            return node;
+        }
+        return parent[node]=find_parent(parent[node]);
+    }
+    void make_union(int u,int v){
+        int ult_u=find_parent(u);
+        int ult_v=find_parent(v);
+
+        if(ult_u==ult_v){
+            return;
+        }
+
+        if(rank[ult_u]>rank[ult_v]){
+            parent[ult_v]=ult_u;
+        }
+        else if(rank[ult_u]<rank[ult_v]){
+            parent[ult_u]=ult_v;
+        }
+        else{
+            parent[ult_v]=ult_u;
+            rank[ult_u]++;
+        }
+    }
+    void make_size(int u,int v){
+        int ult_u=find_parent(u);
+        int ult_v=find_parent(v);
+
+        if(ult_u==ult_v){
+            return;
+        }
+        if(size[ult_u]>size[ult_v]){
+            parent[ult_v]=ult_u;
+            size[ult_u]+=size[ult_v];
+        }
+        else{
+            parent[ult_u]=ult_v;
+            size[ult_v]+=size[ult_u];
+        }
+    }
+};
+vector<int> solve(vector<vector<int>> &v){
+    int n=v.size();
+    disjoint_set ds(n);
+    vector<int>ans(2);
+    for(int i=0;i<n;i++){
+        int a=v[i][0];
+        int b=v[i][1];
+
+        if(ds.find_parent(a)!=ds.find_parent(b)){
+            ds.make_union(a,b);
+        }
+        else{
+            ans[0]=a;
+            ans[1]=b;
+            ds.make_union(a,b);
+        }
+    }
+    return ans;
+}
+int main(){
+    cout<<"hello brother"<<endl;
+    return 0;
+}
+/*
+class disjoint_set{
+    public:
+    vector<int>rank,parent,size;
+    disjoint_set(int n){
+        rank.resize(n+1,0);
+        parent.resize(n+1);
+        size.resize(n+1);
+        for(int i=0;i<=n;i++){
+            parent[i]=i;
+            size[i]=1;
+        }
+    }
+
+    int find_parent(int node){
+        if(node==parent[node]){
+            return node;
+        }
+        return parent[node]=find_parent(parent[node]);
+    }
+    void make_union(int u,int v){
+        int ult_u=find_parent(u);
+        int ult_v=find_parent(v);
+
+        if(ult_u==ult_v){
+            return;
+        }
+
+        if(rank[ult_u]>rank[ult_v]){
+            parent[ult_v]=ult_u;
+        }
+        else if(rank[ult_u]<rank[ult_v]){
+            parent[ult_u]=ult_v;
+        }
+        else{
+            parent[ult_v]=ult_u;
+            rank[ult_u]++;
+        }
+    }
+    void make_size(int u,int v){
+        int ult_u=find_parent(u);
+        int ult_v=find_parent(v);
+
+        if(ult_u==ult_v){
+            return;
+        }
+        if(size[ult_u]>size[ult_v]){
+            parent[ult_v]=ult_u;
+            size[ult_u]+=size[ult_v];
+        }
+        else{
+            parent[ult_u]=ult_v;
+            size[ult_v]+=size[ult_u];
+        }
+
+    }
+};
+bool compare(string a,string b){
+    if(a[1]=='=' && b[1]=='!' ){
+        return 1;
+    }
+    return 0;
+}
+bool solve(vector<string> &v){
+    disjoint_set ds(26);
+    sort(v.begin(),v.end(),compare);
+    int f=0;
+    for(int i=0;i<v.size();i++){
+        string s=v[i];
+        if(s[1]=='='){
+            ds.make_union(s[0]-97,s[3]-97);
+        }
+        else{
+            if(ds.parent[s[0]-97]==ds.parent[s[3]-97]){
+                f=1;
+                break;
+            }
+        }
+    }
+    if(f==1){
+        return 0;
+    }
+    return 1;
+}*/
+
+/*#include<bits/stdc++.h>
+using namespace std;
 int mcm(vector<int>&v,int n,int i,int j,vector<vector<int>> &dp){
     if(i==j){
         return 0;
@@ -40,25 +204,80 @@ int lis(vector<int>&v,int idx,int pre_idx,vector<vector<int>> &dp){
     }
     return dp[idx][pre_idx+1]=max(take,notatke);
 }
-int main(){
-   /* int n;
-    cin>>n;
-    vector<int>v(n);
-    for(int i=0;i<n;i++){
-        cin>>v[i];
-    }
-    vector<vector<int>>dp(n+1,vector<int>(n+1,0));
-    //cout<<lis(v,0,-1,dp);
-    for(int i=n-1;i>=0;i--){
-        for(int j=i-1;j>=-1;j--){
-            int notatke=0+dp[i+1][j+1];
-            int take=-1e9;
-            if(j==-1 || v[i]>v[j]){
-                  take=1+dp[i+1][i+1];
+int find_lis(vector<int>&v,int n){
+    vector<int>dp(n);
+    dp[0]=1;
+    for(int i=1;i<n;i++){
+        int mx=INT16_MIN;
+        for(int j=0;j<i;j++){
+            if(v[j]<v[i]){
+                mx=max(mx,dp[j]);
             }
-            dp[i][j+1]=max(take,notatke);
+        }
+        if(mx==INT16_MIN){
+            dp[i]=1;
+        }
+        else{
+            dp[i]=mx+1;
         }
     }
-    cout<<dp[0][-1+1]<<endl;*/
+    for(int i=0;i<n;i++){
+        cout<<dp[i]<<" ";
+    }
+    return 1;
+}
+
+int sol(int pre_idx,int idx,vector<int>&v){
+    if(idx==v.size()){
+        return 0;
+    }
+    int nt=0+sol(pre_idx,idx+1,v);
+    int take=INT_MIN;
+    if(pre_idx==-1 || v[idx]>v[pre_idx]){
+        take=1 + sol(idx,idx+1,v);
+    }
+    return max(nt,take);
+}
+int lis_using_bs(vector<int>&v,int n){
+    vector<int>temp;
+    temp.push_back(v[0]);
+    for(int i=0;i<n;i++){
+        if(v[i]>temp.back()){
+            temp.push_back(v[i]);
+        }
+        else{
+            int idx=lower_bound(temp.begin(),temp.end(),v[i]) - temp.begin();
+            temp[idx]=v[i];
+        }
+    }
+    return temp.size();
+}
+int find_bridges(vector<pair<int,int>>&v){
+    int n=v.size();
+    sort(v.begin(),v.end());
+    vector<int>dp;
+    dp.push_back(v[0].second);
+    for(int i=1;i<v.size();i++){
+        if(v[i].second > dp.back() && ){
+            dp.push_back(v[i].second);
+        }
+        else{
+            int idx=lower_bound(dp.begin(),dp.end(),v[i].second) - dp.begin();
+            dp[idx]=v[i].second;
+        }
+    }
+    return dp.size();
+}
+int main(){
+    int n;
+    cin>>n;
+    vector<pair<int,int>> v;
+    for(int i=0;i<n;i++){
+        int a,b;
+        cin>>a>>b;
+        v.push_back({a,b});
+    }
+    cout<<find_bridges(v)<<endl;
     return 0;
 }
+*/
